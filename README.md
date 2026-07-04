@@ -1,4 +1,4 @@
-# 🎓 Student Placement Prediction Engine (Docker Containerized)
+# 🎓 Student Placement Prediction Engine (Render)
 
 An end-to-end Machine Learning web application designed to evaluate a student's campus placement probability based on core academic performance indicators, soft skills, technical proficiency, and program dedication. The system trains a Random Forest Classifier on a feature matrix and serves real-time binary classifications through a containerized Flask micro-service.
 
