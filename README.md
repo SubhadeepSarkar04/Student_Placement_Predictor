@@ -1,6 +1,6 @@
 # 🎓 Student Placement Prediction Engine (Render)
 
-An end-to-end Machine Learning web application designed to evaluate a student's campus placement probability based on core academic performance indicators, soft skills, technical proficiency, and program dedication. The system trains a Random Forest Classifier on a feature matrix and serves real-time binary classifications through a containerized Flask micro-service.
+An end-to-end Machine Learning web application designed to evaluate a student's campus placement probability based on core academic performance indicators, soft skills, technical proficiency, and program dedication. The system trains a Random Forest Classifier on a feature matrix and serves real-time binary classifications through a natively deployed Flask micro-service.
 
 ---
 
@@ -96,28 +96,22 @@ python app.py
 
 Open `http://127.0.0.1:5000` in your web browser.
 
-### 2. Containerized Application Emulation (Requires Docker Desktop)
+### 2. Native Cloud Web Service Deployment (Render)
 
-To review the immutable app runtime state exactly as it will run inside the cloud clusters, compile the container locally:
+This production repository utilizes automated cloud hooks linked directly to Render's Native Python Runtime.
 
-```bash
-# Compile the container build layers
-docker build -t student-placement-app .
+1. Deployment Configuration Properties
+When provisioning the Web Service on Render, use the following structural environment parameters:
 
-# Start up the container container and expose the service gateway port
-docker run -p 10000:10000 student-placement-app
+Environment/Runtime: Python
 
-```
+Build Command: pip install -r requirements.txt
 
-Open your web browser and navigate to `http://localhost:10000`.
+Start Command: gunicorn app:app
 
----
+2. Execution Pipeline Behavior
+Version Matching: Render detects runtime.txt automatically to provision a managed Linux environment running your explicit Python 3.10 sub-version.
 
-## 🚀 Cloud Cluster Container Deployment
+Continuous Integration: The pipeline tracks updates to the repository using Git version history on the main branch, triggering an automated build phase on every push.
 
-This production repository utilizes immediate cloud hooks linked directly to **Render**:
-
-* The cluster system tracks updates to the repository using Git version history on the `main` branch.
-* Render automatically reads the root `Dockerfile` to instantiate a robust Linux virtual environment image (`python:3.10-slim`).
-* Package tracking and dependency layers are isolated completely from local file system properties.
-* The system launches the production Gunicorn web processes cleanly bound to public gateway interface configurations, running continuous calculations without downtime.
+Gateway Upkeep: The system builds your inference pipeline dependencies from requirements.txt and launches the production Gunicorn web processes cleanly bound to public web gateway interfaces.
