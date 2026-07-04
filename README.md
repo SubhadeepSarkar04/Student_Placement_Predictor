@@ -5,22 +5,22 @@ An end-to-end Machine Learning web application designed to evaluate a student's 
 ---
 
 ## 👤 Student Profile
-* **Name:** Akshat Garg
-* **Registration Number:** 23BCE10641
+* **Name:** Subhadeep Sarkar
+* **Registration Number:** 23BAI10977
 * **Course:** B.Tech Computer Science and Engineering
 * **Institution:** VIT Bhopal University
 
 ---
 
 ## 🔗 Live Application Gateways
-* **Production Live URL:** https://student-placement-predictor-app-6rll.onrender.com
-* **Source Repository:** https://github.com/AkshatGarg2005/Student-Placement_Predictor_App
+* **Production Live URL:** 
+* **Source Repository:** https://github.com/SubhadeepSarkar04/Student_Placement_Predictor.git
 
 ---
 
 ## 🛠️ System Architecture & Frameworks
 * **Language Core:** Python 3.10
-* **Container Layer:** Docker Engine
+* **Platform Layer:** Render Native Runtime (PaaS)
 * **Inference Pipeline:** Scikit-learn, Pandas, NumPy
 * **Application Framework:** Flask Microkernel
 * **Production Gateway:** Gunicorn WSGI Web Server
